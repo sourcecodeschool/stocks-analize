@@ -16,6 +16,16 @@ public class Repository {
         return new ArrayList<>();
     }
 
+    asdfasdf
+    asdfasdffa
+
+    public asdfasdf getAsdfasdffa() {
+        a
+                sd
+                asdfasdffasdf
+                        asd
+                        fasdf
+    }
     //Использовать файловую сериализацию
 
     //ПортфельРепозиторий
