@@ -1,0 +1,38 @@
+#splitpane {
+    -fx-background-color: #353f59;
+}
+#leftAnchorPane {
+    -fx-background-color: #2b344b;
+}
+.btn {
+    -fx-text-fill: white;
+    -fx-background-color: #2c354b;
+}
+.btn:hover {
+    -fx-background-color: #6534ac;
+    -fx-cursor: hand;
+}
+#portfolio {
+    -fx-background-image: url('portfolio.png');
+    -fx-background-size: 45px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center top;
+}
+#graphic {
+    -fx-background-image: url('graph.png');
+    -fx-background-size: 45px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center top;
+}
+
+#AddPortfolio {
+    -fx-background-color: none;
+    -fx-background-image: url('plus.png');
+    -fx-background-size: 80px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center top;
+}
+#AddPortfolio:hover {
+    -fx-background-image: url('plusHover.png');
+    -fx-cursor: hand;
+}
