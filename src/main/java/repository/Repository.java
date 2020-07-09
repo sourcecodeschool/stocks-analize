@@ -1,6 +1,5 @@
 package repository;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,22 +11,10 @@ public class Repository {
     //CRUD create update delete get list
 
     public List<String> getBagsList() {
-        //read file, List<Bag> return;
         return new ArrayList<>();
     }
 
-    asdfasdf
-    asdfasdffa
-
-    public asdfasdf getAsdfasdffa() {
-        a
-                sd
-                asdfasdffasdf
-                        asd
-                        fasdf
-    }
     //Использовать файловую сериализацию
-
     //ПортфельРепозиторий
     //АктивнаяЕдиницаРекпозиторий
     //Файл и путь к нему
