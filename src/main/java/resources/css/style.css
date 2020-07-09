@@ -41,3 +41,6 @@
     -fx-background-color: transparent;
     -fx-cursor: default;
 }
+.bag {
+    -fx-background-color:red;
+}
