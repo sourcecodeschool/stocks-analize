@@ -1,4 +1,4 @@
-#splitpane {
+#rightAnchorPane {
     -fx-background-color: #353f59;
 }
 #leftAnchorPane {
@@ -13,13 +13,13 @@
     -fx-cursor: hand;
 }
 #portfolio {
-    -fx-background-image: url('portfolio.png');
+    -fx-background-image: url('../images/portfolio.png');
     -fx-background-size: 45px;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center top;
 }
 #graphic {
-    -fx-background-image: url('graph.png');
+    -fx-background-image: url('../images/graph.png');
     -fx-background-size: 45px;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center top;
@@ -27,12 +27,17 @@
 
 #AddPortfolio {
     -fx-background-color: none;
-    -fx-background-image: url('plus.png');
+    -fx-background-image: url('../images/plus.png');
     -fx-background-size: 80px;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center top;
 }
 #AddPortfolio:hover {
-    -fx-background-image: url('plusHover.png');
+    -fx-background-image: url('../images/plusHover.png');
     -fx-cursor: hand;
+}
+
+.split-pane .split-pane-divider {
+    -fx-background-color: transparent;
+    -fx-cursor: default;
 }
