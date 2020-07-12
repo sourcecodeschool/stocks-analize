@@ -1,6 +1,6 @@
 package repository;
 
-import model.ListBags;
+import model.Portfolio;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,11 +14,11 @@ public class Repository {
 
     //Проверить есть ли файл вообще Path
 
-    public List<String> getBagsList() {
+    public List<String> getPortfolio() {
         return new ArrayList<>();
     }
 
-    public void updateBagsList(List<ListBags> listBags) {
+    public void updatePortfolio(List<Portfolio> portfolios) {
 
     }
 
