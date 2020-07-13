@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Portfolio implements Serializable {
+public class Portfolio implements java.io.Serializable {
 
     private Long portfolioId;
     private String portfolioName;

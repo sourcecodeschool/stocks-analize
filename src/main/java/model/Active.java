@@ -1,14 +1,16 @@
 package model;
 
-public class Active {
+import java.io.Serializable;
+
+public class Active implements Serializable {
 
         private String fund; //фонд
-        private long id = System.currentTimeMillis(); // id нашего фонда
+        private Long id; // id нашего фонда
         private String name; // имя
-        private double rate = 0; //ставка
-        private int period;
+        private Double rate = 0d; //ставка
+        private Integer period;
 
-        public Active(String fund, long id, String name, double rate, int period) {
+        public Active(String fund, Long id, String name, Double rate, Integer period) {
             this.fund = fund;
             this.id = id;
             this.name = name;
@@ -20,7 +22,7 @@ public class Active {
             return fund;
         }
 
-        public long getId() {
+        public Long getId() {
             return id;
         }
 
@@ -28,11 +30,11 @@ public class Active {
             return name;
         }
 
-        public double getRate() {
+        public Double getRate() {
             return rate;
         }
 
-        public int getPeriod() {
+        public Integer getPeriod() {
             return period;
         }
 
@@ -52,8 +54,8 @@ public class Active {
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
+        Integer result;
+        Long temp;
         result = fund != null ? fund.hashCode() : 0;
         result = 31 * result + (int) (id ^ (id >>> 32));
         result = 31 * result + (name != null ? name.hashCode() : 0);
@@ -93,5 +95,7 @@ public class Active {
                 ", period=" + period +
                 '}';
     }
+
+
 }
 
