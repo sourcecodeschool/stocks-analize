@@ -55,11 +55,7 @@ public class Bags implements Serializable, Repository {
 
     @Override
     public void CreateBag(Bags bag) throws IOException {
-        File f = new File(pathPrefix+pathTo);
-        if(f.exists() && !f.isDirectory()) {                  //Проверка на наличие файла
-            File file = new File(pathPrefix+pathTo);
-        }
-        updateBagsList(bag);
+
     }
 
     @Override
@@ -73,7 +69,10 @@ public class Bags implements Serializable, Repository {
 
     @Override
     public void updateBagsList(Bags bag) throws IOException {
-        bagId = bagId +1;
+        File f = new File(pathPrefix+pathTo);
+        if(f.exists() && !f.isDirectory()) {                  //Проверка на наличие файла
+            File file = new File(pathPrefix+pathTo);
+        }
         FileOutputStream fileOutputStream = new FileOutputStream(pathPrefix + pathTo, true);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
         objectOutputStream.writeObject(bag);
