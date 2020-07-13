@@ -1,11 +1,11 @@
 package model;
 
-import repository.Repository;
+import repository.PortfolioRepository;
 
 import java.io.*;
 import java.util.HashMap;
 
-public class Bags implements Serializable, Repository {
+public class Bags implements Serializable, PortfolioRepository {
 
     public static int bagId = 0;
     private Long portfolioId;
@@ -54,6 +54,26 @@ public class Bags implements Serializable, Repository {
     }
 
     @Override
+    public void create(Bags bag) throws IOException {
+
+    }
+
+    @Override
+    public Bags get(Long id) throws IOException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public void update(Bags bag) throws IOException {
+
+    }
+
+    @Override
+    public void delete(Bags bags) throws IOException {
+
+    }
+
+   /* @Override
     public void CreateBag(Bags bag) throws IOException {
 
     }
@@ -82,7 +102,7 @@ public class Bags implements Serializable, Repository {
     @Override
     public void deleteBag(long id, String name) {
 
-    }
+    }*/
 
 }
 
