@@ -38,7 +38,6 @@
                      </font>
                      <styleClass>
                         <String fx:value="btn" />
-                        <String fx:value="btn" />
                      </styleClass>
                   </Button>
                </children>
