@@ -7,6 +7,7 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import model.Bags;
+import repository.EntityManager;
 
 import java.io.IOException;
 import java.net.URL;
@@ -38,17 +39,17 @@ public class Controller implements Initializable {
 
 
             Bags bags = new Bags();
-            try {
-                try {
-                    bags = bags.getBag();
-                    System.out.println(bags.getPortfolioName());
-                    System.out.println(bags.getPortfolioId());
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                try {
+//                    bags = bags.getBag();
+//                    System.out.println(bags.getPortfolioName());
+//                    System.out.println(bags.getPortfolioId());
+//                } catch (ClassNotFoundException e) {
+//                    e.printStackTrace();
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
 
             // Попытка сделать сериализацию и десериализацию через список ArrayList
 //            Bags bagsList = new Bags();
@@ -71,11 +72,11 @@ public class Controller implements Initializable {
         AddPortfolio.setOnMouseClicked(event -> {
             System.out.println("Нажата кнопка добавить портфель");
             Bags bag = new Bags(3L,"Brillianti", System.currentTimeMillis());
-            try {
-                bag.CreateBag(bag);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                bag.CreateBag(bag);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
             // Попытка сделать сериализацию и десериализацию через список ArrayList
 //            ArrayList<Object> bags = new ArrayList<Object>();
 //            Bags bag1 = new Bags(1L,"Bitcoin", System.currentTimeMillis();
@@ -102,6 +103,7 @@ public class Controller implements Initializable {
         pane.setLayoutX(600);
         mainForm.getChildren().add(pane);
 
+        //EntityManager.getInstance().updateBag();
     }
 
     public Controller() {
