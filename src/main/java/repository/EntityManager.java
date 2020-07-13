@@ -1,13 +1,30 @@
-package main;
+package repository;
 import model.Bags;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EntityManager implements Serializable {
-    //список портфелей
 
+    private static EntityManager entityManager;
+    public static EntityManager getInstance() {
+        if (entityManager == null) {
+            entityManager = new EntityManager();
+        }
+        return entityManager;
+    }
+
+    private EntityManager() {
+    }
+
+    static final String pathPrefix = System.getProperty("user.home") + "/db" ;
+    static final String pathTo = "bag.dat";
+
+    //список портфелей
+    static List<Bags> bags = new ArrayList<>();
+    static PortfolioRepository portfolioRepository = PortfolioRepositoryImpl.getInstance();
+    //...
     public void GetBagsList() {
 
 // Попытка работать с файлом данных как с текстовым файлом
@@ -34,4 +51,9 @@ public class EntityManager implements Serializable {
 //список активов
 //нужен для сохранения в репозиторий
     }
+
+    public void updateBag(Bags bags) throws IOException {
+        portfolioRepository.update(bags);
+    }
+
 }
