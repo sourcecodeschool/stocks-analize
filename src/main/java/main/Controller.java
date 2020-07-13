@@ -37,6 +37,34 @@ public class Controller implements Initializable {
         });
 
         portfolioButton.setOnMouseClicked(event -> {
+
+
+
+
+
+
+//            System.out.println("Нажата кнопка портфели");
+//            Bags bags = new Bags();
+//            try {
+//                try {
+//                    bags = bags.getBag();
+//                    System.out.println(bags.getPortfolioName());
+//                    System.out.println(bags.getPortfolioId());
+//                } catch (ClassNotFoundException e) {
+//                    e.printStackTrace();
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//         });
+        AddPortfolio.setOnMouseClicked(event -> {
+//            System.out.println("Нажата кнопка добавить портфель");
+//            Bags bag = new Bags(3L,"Brillianti", System.currentTimeMillis());
+//            try {
+//                bag.CreateBag(bag);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
             System.out.println("Кнопка нажата");
             rightAnchorPane.getChildren().clear();
             rightAnchorPane.getChildren().add(new Label(" EntityManager.bags.add(bag);\n" +
@@ -46,7 +74,7 @@ public class Controller implements Initializable {
         chartsButton.setOnMouseClicked(event -> {
             rightAnchorPane.getChildren().clear();
             rightAnchorPane.getChildren().add(getChartNode());
-        });
+//        });
         //this.showPortfolioForm();
 
         Pane pane = new Pane();
@@ -55,6 +83,7 @@ public class Controller implements Initializable {
         pane.setPrefSize(100,100);
         pane.setLayoutX(600);
         mainForm.getChildren().add(pane);
+
     }
 
     public Controller() {
