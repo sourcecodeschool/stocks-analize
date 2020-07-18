@@ -1,6 +1,5 @@
 package model;
 
-import java.io.DataOutput;
 import java.io.Serializable;
 import java.util.HashMap;
 
@@ -20,6 +19,10 @@ public class Active implements Serializable {
         this.rate = rate;
         this.period = period;
         this.actives = actives;
+    }
+
+    public static void getSelectionModel() {
+
     }
 
     public String getFund() {
@@ -49,15 +52,11 @@ public class Active implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Active)) return false;
 
         Active active = (Active) o;
 
-        if (id != active.id) return false;
-        if (Double.compare(active.rate, rate) != 0) return false;
-        if (period != active.period) return false;
-        if (!fund.equals(active.fund)) return false;
-        return name.equals(active.name);
+        return this.id.equals(((Active) o).id) && this.name == ((Active) o).name;
 
     }
 
