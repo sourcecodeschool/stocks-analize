@@ -38,14 +38,14 @@
                      </font>
                      <styleClass>
                         <String fx:value="btn" />
-                        <String fx:value="settings" />
+                        <String fx:value="btn" />
                      </styleClass>
                   </Button>
                </children>
             </AnchorPane>
           <AnchorPane id="rightAnchorPane" fx:id="rightAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="anchorPane">
                <children>
-                  <Button id="AddPortfolio" alignment="BOTTOM_CENTER" layoutX="202.0" layoutY="156.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="88.0">
+                  <Button id="AddPortfolio" fx:id="AddPortfolio" alignment="BOTTOM_CENTER" layoutX="202.0" layoutY="156.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="88.0">
                      <font>
                         <Font name="Calibri Bold" size="19.0" />
                      </font>

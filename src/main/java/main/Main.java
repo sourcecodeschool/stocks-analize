@@ -5,6 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.Active;
+import model.Bags;
+
+import java.sql.SQLOutput;
 
 public class Main extends Application {
 
@@ -13,8 +17,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../resources/main.fxml"));
-        System.out.println(controller == null);
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("My investment");
         Scene scene = new Scene(root, 600,400);
         scene.getStylesheets().add(getClass().getResource("../resources/css/style.css").toString());
         primaryStage.setScene(scene);
@@ -23,7 +26,6 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-
 
     }
 }
