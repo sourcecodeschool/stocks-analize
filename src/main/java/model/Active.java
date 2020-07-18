@@ -1,25 +1,32 @@
 package model;
 
-public class Active {
+import java.io.DataOutput;
+import java.io.Serializable;
+import java.util.HashMap;
+
+public class Active implements Serializable {
+
     private String fund; //фонд
-    private Long id = System.currentTimeMillis(); // id нашего фонда
+    private Integer id; // id нашего фонда
     private String name; // имя
     private Double rate = 0d; //ставка
+    private Integer period;
+    private HashMap<Long, Double> actives = new HashMap<>();
 
-    enum duration {MONTH, YEAR}
-
-    public Active(String fund, long id, String name, double rate, int period) {
+    public Active(String fund, Integer id, String name, Double rate, Integer period) {
         this.fund = fund;
         this.id = id;
         this.name = name;
         this.rate = rate;
+        this.period = period;
+        this.actives = actives;
     }
 
     public String getFund() {
         return fund;
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -27,30 +34,68 @@ public class Active {
         return name;
     }
 
-    public double getRate() {
+    public Double getRate() {
         return rate;
     }
 
-        @Override
+    public Integer getPeriod() {
+        return period;
+    }
+
+    public HashMap<Long, Double> getActives() {
+        return actives;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Active)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         Active active = (Active) o;
 
-        return this.id.equals(active.id);
+        if (id != active.id) return false;
+        if (Double.compare(active.rate, rate) != 0) return false;
+        if (period != active.period) return false;
+        if (!fund.equals(active.fund)) return false;
+        return name.equals(active.name);
+
     }
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        result = fund.hashCode();
+        Integer result;
+        Long temp;
+        result = fund != null ? fund.hashCode() : 0;
         result = 31 * result + (int) (id ^ (id >>> 32));
-        result = 31 * result + name.hashCode();
+        result = 31 * result + (name != null ? name.hashCode() : 0);
         temp = Double.doubleToLongBits(rate);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + period;
         return result;
+    }
+
+    public void setFund(String fund) {
+        this.fund = fund;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setRate(Double rate) {
+        this.rate = rate;
+    }
+
+    public void setPeriod(Integer period) {
+        this.period = period;
+    }
+
+    public void setActives(HashMap<Long, Double> actives) {
+        this.actives = actives;
     }
 
     @Override
@@ -60,7 +105,9 @@ public class Active {
                 ", id=" + id +
                 ", name='" + name + '\'' +
                 ", rate=" + rate +
+                ", period=" + period +
+                ", actives=" + actives +
                 '}';
     }
-
 }
+

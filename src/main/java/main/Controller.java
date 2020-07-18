@@ -14,15 +14,15 @@ import javafx.scene.layout.Pane;
 import model.Portfolio;
 import repository.EntityManager;
 import repository.PortfolioRepositoryImpl;
-
 import java.io.IOException;
-
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-
+import javafx.scene.text.Text;
+import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 
 public class Controller implements Initializable {
 
@@ -65,19 +65,16 @@ public class Controller implements Initializable {
             rightAnchorPane.getChildren().clear();
             rightAnchorPane.getChildren().add(getChartNode());
         });
+        //this.showPortfolioForm();
 
 
         Pane pane = new Pane();
-//        pane.setStyle("-fx-background-color:red;");
+//      pane.setStyle("-fx-background-color:red;");
         pane.getStyleClass().add("bag");
         pane.setPrefSize(100, 100);
         pane.setLayoutX(600);
         mainForm.getChildren().add(pane);
 
-    }
-
-    public Controller() {
-        Main.controller = this;
     }
 
 
@@ -113,8 +110,6 @@ public class Controller implements Initializable {
         areaChart.getData().addAll(series2014, series2015);
 
         return areaChart;
-
     }
 
 }
-
