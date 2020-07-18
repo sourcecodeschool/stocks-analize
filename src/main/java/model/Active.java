@@ -56,7 +56,7 @@ public class Active implements Serializable {
 
         Active active = (Active) o;
 
-        return this.id.equals(((Active) o).id) && this.name == ((Active) o).name;
+        return this.id.equals(((Active) o).id);
 
     }
 
