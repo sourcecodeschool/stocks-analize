@@ -1,6 +1,7 @@
 package repository;
 
-import java.io.File;
+import model.ListBags;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,13 +12,17 @@ public class Repository {
 
     //CRUD create update delete get list
 
+    //Проверить есть ли файл вообще Path
+
     public List<String> getBagsList() {
-        //read file, List<Bag> return;
         return new ArrayList<>();
     }
 
-    //Использовать файловую сериализацию
+    public void updateBagsList(List<ListBags> listBags) {
 
+    }
+
+    //Использовать файловую сериализацию
     //ПортфельРепозиторий
     //АктивнаяЕдиницаРекпозиторий
     //Файл и путь к нему
