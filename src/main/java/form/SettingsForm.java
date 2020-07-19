@@ -1,0 +1,97 @@
+package form;
+
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.event.Event;
+import javafx.scene.Node;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import model.Active;
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SettingsForm {
+
+    public static Node getRoot() {
+        AnchorPane root = new AnchorPane();
+        VBox vBox = new VBox();
+        AnchorPane.setLeftAnchor(root,0.);
+        AnchorPane.setTopAnchor(root,0.);
+        AnchorPane.setRightAnchor(root,0.);
+        AnchorPane.setBottomAnchor(root,0.);
+
+        Button activeButton = new Button("Редактор активов");
+        activeButton.setOnMouseClicked(event -> {
+            root.getChildren().clear();
+            root.getChildren().add(getActiveEditForm());
+        });
+
+        vBox.getChildren().add(activeButton);
+
+        root.getChildren().add(vBox);
+        return root;
+    }
+
+    private static Node getActiveEditForm() {
+        List<String> strings = new ArrayList<>();
+        VBox vBox = new VBox();
+        HBox hBox = new HBox();
+        hBox.setId("Active getID");
+        hBox.setOnMouseEntered(mouseEvent -> {
+            hBox.setStyle("-fx-background-color: #ccc;");
+        });
+        hBox.setOnMouseExited(mouseEvent -> {
+            hBox.setStyle("-fx-background-color: transparent;");
+        });
+        hBox.setOnMouseClicked(mouseEvent -> {
+            hBox.setStyle("-fx-border-color: black;-fx-border-width: 1px;");
+            strings.add(hBox.getId());
+        });
+        hBox.getChildren().add(new Label("Name"));
+        hBox.getChildren().add(new Label("Fund"));
+        hBox.getChildren().add(new Label("10"));
+        vBox.getChildren().add(hBox);
+
+        HBox buttonBox = new HBox();
+        Button createButton = new Button("Создать");
+        createButton.setOnMouseClicked(event -> {
+            vBox.getChildren().clear();
+            vBox.getChildren().add(getCreateActiveForm());
+        });
+
+        Button showButton = new Button("Показать выделенные");
+        showButton.setOnMouseClicked(event -> {
+            strings.forEach(s -> {
+                System.out.println(s);
+            });
+        });
+
+        buttonBox.getChildren().add(createButton);
+        buttonBox.getChildren().add(showButton);
+        vBox.getChildren().add(buttonBox);
+        return vBox;
+    }
+
+    private static Node getCreateActiveForm() {
+        VBox vBox = new VBox();
+        AnchorPane.setLeftAnchor(vBox,15.);
+        AnchorPane.setTopAnchor(vBox,15.);
+        AnchorPane.setRightAnchor(vBox,null);
+        AnchorPane.setBottomAnchor(vBox,15.);
+        Label fundLabel = new Label("Фонд");
+        TextField fundTF = new TextField();
+        Label nameLabel = new Label("Название");
+        TextField nameTF = new TextField();
+        vBox.getChildren().add(fundLabel);
+        vBox.getChildren().add(fundTF);
+        vBox.getChildren().add(nameLabel);
+        vBox.getChildren().add(nameTF);
+        return vBox;
+    }
+
+}

@@ -10,6 +10,7 @@ public class Active implements Serializable {
         private Double rate = 0d; //ставка
         private Integer period;
 
+
         public Active(String fund, Long id, String name, Double rate, Integer period) {
             this.fund = fund;
             this.id = id;

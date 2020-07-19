@@ -1,5 +1,6 @@
 package main;
 
+import form.SettingsForm;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Side;
@@ -37,10 +38,12 @@ public class Controller implements Initializable {
         });
 
         portfolioButton.setOnMouseClicked(event -> {
-            System.out.println("Кнопка нажата");
+//            System.out.println("Кнопка нажата");
+//            rightAnchorPane.getChildren().clear();
+//            rightAnchorPane.getChildren().add(new Label(" EntityManager.bags.add(bag);\n" +
+//                    "        //serialize this EntityManager.bags"));
             rightAnchorPane.getChildren().clear();
-            rightAnchorPane.getChildren().add(new Label(" EntityManager.bags.add(bag);\n" +
-                    "        //serialize this EntityManager.bags"));
+            rightAnchorPane.getChildren().add(SettingsForm.getRoot());
         });
 
         chartsButton.setOnMouseClicked(event -> {
