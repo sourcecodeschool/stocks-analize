@@ -1,17 +1,13 @@
 package form;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.event.Event;
 import javafx.scene.Node;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.Active;
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,6 +81,23 @@ public class SettingsForm {
         AnchorPane.setBottomAnchor(vBox,15.);
         Label fundLabel = new Label("Фонд");
         TextField fundTF = new TextField();
+        Label nameLabel = new Label("Название");
+        TextField nameTF = new TextField();
+        vBox.getChildren().add(fundLabel);
+        vBox.getChildren().add(fundTF);
+        vBox.getChildren().add(nameLabel);
+        vBox.getChildren().add(nameTF);
+        return vBox;
+    }
+
+    private static Node getEditActiveForm(Active active) {
+        VBox vBox = new VBox();
+        AnchorPane.setLeftAnchor(vBox,15.);
+        AnchorPane.setTopAnchor(vBox,15.);
+        AnchorPane.setRightAnchor(vBox,null);
+        AnchorPane.setBottomAnchor(vBox,15.);
+        Label fundLabel = new Label("Фонд");
+        TextField fundTF = new TextField(active.getFund());
         Label nameLabel = new Label("Название");
         TextField nameTF = new TextField();
         vBox.getChildren().add(fundLabel);
