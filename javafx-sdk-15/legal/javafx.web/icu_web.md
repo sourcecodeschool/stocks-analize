@@ -92,7 +92,7 @@ property of their respective owners.
  #
  #  All rights reserved.
  #
- #  Redistribution and use in source and binary forms, with or without
+ #  Redistribution and use in source and binary form, with or without
  # modification, are permitted provided that the following conditions are met:
  #
  #  Redistributions of source code must retain the above copyright notice,
@@ -140,7 +140,7 @@ property of their respective owners.
  #   * Copyright (c) 1999 Pai-Hsiang Hsiao.
  #   * All rights reserved.
  #   *
- #   * Redistribution and use in source and binary forms, with or without
+ #   * Redistribution and use in source and binary form, with or without
  #   * modification, are permitted provided that the following conditions
  #   * are met:
  #   *
@@ -173,7 +173,7 @@ property of their respective owners.
  #   *                    Institute of Information Science, Academia
  #       *                    Sinica. All rights reserved.
  #   *
- #   * Redistribution and use in source and binary forms, with or without
+ #   * Redistribution and use in source and binary form, with or without
  #   * modification, are permitted provided that the following conditions
  #   * are met:
  #   *
@@ -300,7 +300,7 @@ property of their respective owners.
  #  Copyright (C) 2013 Brian Eugene Wilson, Robert Martin Campbell.
  #  All rights reserved.
  #
- #  Redistribution and use in source and binary forms, with or without
+ #  Redistribution and use in source and binary form, with or without
  #  modification,
  #  are permitted provided that the following conditions are met:
  #
@@ -338,7 +338,7 @@ property of their respective owners.
  #  Copyright (c) 2013, LeRoy Benjamin Sharon
  #  All rights reserved.
  #
- #  Redistribution and use in source and binary forms, with or without
+ #  Redistribution and use in source and binary form, with or without
  #  modification, are permitted provided that the following conditions
  #  are met: Redistributions of source code must retain the above
  #  copyright notice, this list of conditions and the following
@@ -392,7 +392,7 @@ Database section 7.
 6. Google double-conversion
 
 Copyright 2006-2011, the V8 project authors. All rights reserved.
-Redistribution and use in source and binary forms, with or without
+Redistribution and use in source and binary form, with or without
 modification, are permitted provided that the following conditions are
 met:
 
