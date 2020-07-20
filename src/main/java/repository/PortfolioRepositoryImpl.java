@@ -3,6 +3,7 @@ package repository;
 import model.Portfolio;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PortfolioRepositoryImpl implements PortfolioRepository {
@@ -10,6 +11,7 @@ public class PortfolioRepositoryImpl implements PortfolioRepository {
     private static PortfolioRepository repository;
     static final String pathPrefix = System.getProperty("user.home") + "/db" ;
     static final String pathTo = "Portfolio.dat";
+    public static List<Portfolio> portfolioList = new ArrayList<>();
 
     public static PortfolioRepository getInstance() {
         if (repository == null) {
@@ -19,31 +21,31 @@ public class PortfolioRepositoryImpl implements PortfolioRepository {
     }
 
     private PortfolioRepositoryImpl() {
+        //deserialize
     }
 
     @Override
     public void create(Portfolio portfolio) throws IOException {
-        EntityManager.portfolioList.add(portfolio);
-        //serialize this EntityManager.bags
+        //modify portfolioList
+        serializeList(portfolioList);
     }
 
     @Override
     public Portfolio get(Long portfolioId) throws IOException, ClassNotFoundException {
-
-return EntityManager.portfolioList.get(Math.toIntExact(portfolioId));
+        //compare List with file
+        return null;//portfolioList.stream().filter()
     }
 
     @Override
     public void update(Portfolio portfolio) throws IOException {
-        EntityManager.portfolioList.remove(portfolio);
-        EntityManager.portfolioList.add(portfolio);
-        //serialize this EntityManager.portfolioList
-        serializeList(EntityManager.portfolioList);
+        //modify portfolioList
+        serializeList(portfolioList);
     }
 
     @Override
     public void delete(Portfolio portfolio) throws IOException {
-
+        //modify portfolioList
+        serializeList(portfolioList);
     }
 
     private void serializeList(List<Portfolio> portfolioList) throws IOException {
@@ -60,8 +62,16 @@ return EntityManager.portfolioList.get(Math.toIntExact(portfolioId));
     public List<Portfolio> deSerializeList() throws IOException, ClassNotFoundException {
         FileInputStream fileInputStream = new FileInputStream(pathPrefix + pathTo);
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-        List<Portfolio> portfolioList = (List<Portfolio>) objectInputStream.readObject();
+        Object object = objectInputStream.readObject();
         objectInputStream.close();
+        List<Portfolio> portfolioList = null;
+        if (object instanceof List) {
+            try {
+                portfolioList = (List<Portfolio>) object;
+            } catch (ClassCastException e) {
+                return null;
+            }
+        }
         return portfolioList;
     }
 }
