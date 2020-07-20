@@ -32,7 +32,7 @@ public class Controller implements Initializable {
     @FXML
     private Button chartsButton;
     @FXML
-    private Button AddPortfolio;
+    private Button addPortfolioButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -79,8 +79,8 @@ public class Controller implements Initializable {
 //            entityManager.GetBagsList();
 //        });
         });
-        AddPortfolio.setOnMouseClicked(event -> {
-            System.out.println("Нажата кнопка добавить портфель");
+        /*addPortfolioButton.setOnMouseClicked(event -> {
+           *//* System.out.println("Нажата кнопка добавить портфель");
             EntityManager.getInstance();
             PortfolioRepositoryImpl.getInstance();
 
@@ -98,7 +98,7 @@ public class Controller implements Initializable {
 
             System.out.println(EntityManager.portfolioList.get(1).getPortfolioName().toString());
 
-
+*//*
 //            try {
 //                bag.CreateBag(bag);
 //            } catch (IOException e) {
@@ -125,7 +125,7 @@ public class Controller implements Initializable {
 //                    "        //serialize this EntityManager.bags"));
             rightAnchorPane.getChildren().clear();
             rightAnchorPane.getChildren().add(SettingsForm.getRoot());
-        });
+        });*/
 
         chartsButton.setOnMouseClicked(event -> {
             rightAnchorPane.getChildren().clear();
