@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="mainForm" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+   <children>
+      <SplitPane id="splitPane" fx:id="splitPane" dividerPositions="0.3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@css/style.css">
+        <items>
+          <AnchorPane id="leftAnchorPane" maxWidth="100.0" minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="82.0" styleClass="anchorPane">
+               <children>
+                  <Pane prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Button id="portfolio" fx:id="portfolioButton" alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Портфели">
+                           <font>
+                              <Font name="Calibri Bold" size="19.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="btn" />
+                              <String fx:value="portfolio" />
+                           </styleClass>
+                           <opaqueInsets>
+                              <Insets top="20.0" />
+                           </opaqueInsets>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Button id="settings" alignment="CENTER" layoutX="-7.0" layoutY="365.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="114.0" text="Настройки" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="19.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="settings" />
+                     </styleClass>
+                  </Button>
+                  <Pane layoutY="112.0" prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Button id="graphic" alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Графики">
+                           <font>
+                              <Font name="Calibri Bold" size="19.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="btn" />
+                              <String fx:value="graphic" />
+                           </styleClass>
+                        </Button>
+                     </children></Pane>
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="rightAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="anchorPane">
+               <children>
+                  <Button id="AddPortfolio" fx:id="addPortfolioButton" alignment="BOTTOM_CENTER" layoutX="202.0" layoutY="298.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="88.0">
+                     <font>
+                        <Font name="Calibri Bold" size="19.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="btnAddPortfolio" />
+                        <String fx:value="AddPortfolio" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

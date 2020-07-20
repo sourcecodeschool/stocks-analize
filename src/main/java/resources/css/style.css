@@ -4,21 +4,34 @@
 #leftAnchorPane {
     -fx-background-color: #2b344b;
 }
+.btnPane {
+    -fx-padding: 5px 0px 5px 0px;
+}
 .btn {
     -fx-text-fill: white;
     -fx-background-color: #2c354b;
+    -fx-background-size: 45px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-alignment: bottom-center;
 }
-.btn:hover {
+.btn:hover,.btnPane:hover {
     -fx-background-color: #6534ac;
     -fx-cursor: hand;
 }
+#test {
+    -fx-background-color: red !important;
+}
 #portfolio {
+    -fx-background-image: url('../images/portfolio.png');
+
     -fx-background-image: url('../images/portfolio.png');
     -fx-background-size: 45px;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center top;
 }
 #graphic {
+    -fx-background-image: url('../images/graph.png');
     -fx-background-image: url('../images/graph.png');
     -fx-background-size: 45px;
     -fx-background-repeat: no-repeat;
@@ -42,5 +55,5 @@
     -fx-cursor: default;
 }
 .bag {
-    -fx-background-color:red;
+    -fx-background-color: #ACA9BB;
 }
