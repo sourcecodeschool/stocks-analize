@@ -6,8 +6,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import model.Bags;
+import model.Portfolio;
 import repository.EntityManager;
+import repository.PortfolioRepositoryImpl;
 
 import java.io.IOException;
 import java.net.URL;
@@ -38,7 +39,7 @@ public class Controller implements Initializable {
 
 
 
-            Bags bags = new Bags();
+            Portfolio portfolio = new Portfolio();
 //            try {
 //                try {
 //                    bags = bags.getBag();
@@ -71,7 +72,24 @@ public class Controller implements Initializable {
         });
         AddPortfolio.setOnMouseClicked(event -> {
             System.out.println("Нажата кнопка добавить портфель");
-            Bags bag = new Bags(3L,"Brillianti", System.currentTimeMillis());
+            EntityManager.getInstance();
+            PortfolioRepositoryImpl.getInstance();
+
+           // PortfolioRepositoryImpl.create
+
+            Portfolio portfolio1 = new Portfolio(1L,"Brilliant", System.currentTimeMillis());
+            Portfolio portfolio2 = new Portfolio(2L,"Bitcoin", System.currentTimeMillis()+1);
+
+            try {
+                portfolio1.create(portfolio1);
+                portfolio2.create(portfolio2);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            System.out.println(EntityManager.portfolioList.get(1).getPortfolioName().toString());
+
+
 //            try {
 //                bag.CreateBag(bag);
 //            } catch (IOException e) {

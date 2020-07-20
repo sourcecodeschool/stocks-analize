@@ -1,11 +1,12 @@
 package repository;
-import model.Bags;
+import model.Portfolio;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EntityManager implements Serializable {
+
 
     private static EntityManager entityManager;
     public static EntityManager getInstance() {
@@ -18,12 +19,12 @@ public class EntityManager implements Serializable {
     private EntityManager() {
     }
 
-    static final String pathPrefix = System.getProperty("user.home") + "/db" ;
-    static final String pathTo = "bag.dat";
+
 
     //список портфелей
-    static List<Bags> bags = new ArrayList<>();
+    public static List<Portfolio> portfolioList = new ArrayList<>();
     static PortfolioRepository portfolioRepository = PortfolioRepositoryImpl.getInstance();
+
     //...
     public void GetBagsList() {
 
@@ -52,8 +53,8 @@ public class EntityManager implements Serializable {
 //нужен для сохранения в репозиторий
     }
 
-    public void updateBag(Bags bags) throws IOException {
-        portfolioRepository.update(bags);
+    public void updateBag(Portfolio portfolio) throws IOException {
+        portfolioRepository.update(portfolio);
     }
 
 }

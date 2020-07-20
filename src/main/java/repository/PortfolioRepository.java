@@ -1,11 +1,11 @@
 package repository;
 
-import model.Bags;
+import model.Portfolio;
 import java.io.*;
 
 public interface PortfolioRepository {
-    void create(Bags bag) throws IOException;
-    Bags get(Long id) throws IOException, ClassNotFoundException;
-    void update(Bags bag) throws IOException;
-    void delete(Bags bags) throws IOException;
+    void create(Portfolio portfolioList) throws IOException;
+    Portfolio get(Long id) throws IOException, ClassNotFoundException;
+    void update(Portfolio portfolioList) throws IOException;
+    void delete(Portfolio portfilio) throws IOException;
 }

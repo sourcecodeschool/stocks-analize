@@ -5,21 +5,20 @@ import repository.PortfolioRepository;
 import java.io.*;
 import java.util.HashMap;
 
-public class Bags implements Serializable, PortfolioRepository {
+public class Portfolio implements Serializable, PortfolioRepository {
 
-    public static int bagId = 0;
     private Long portfolioId;
     private String portfolioName;
     private Long date = System.currentTimeMillis();
     private HashMap<Long, Double> investment = new HashMap<>();
 
-    public Bags(Long portfolioId, String portfolioName, Long date) {
+    public Portfolio(Long portfolioId, String portfolioName, Long date) {
         this.portfolioId = portfolioId;
         this.portfolioName = portfolioName;
         this.date = date;
         this.investment = investment;
     }
-    public Bags(){}
+    public Portfolio(){}
 
     public Long getPortfolioId() {
         return portfolioId;
@@ -54,22 +53,23 @@ public class Bags implements Serializable, PortfolioRepository {
     }
 
     @Override
-    public void create(Bags bag) throws IOException {
+    public void create(Portfolio portfolio) throws IOException {
 
     }
 
     @Override
-    public Bags get(Long id) throws IOException, ClassNotFoundException {
+    public Portfolio get(Long id) throws IOException, ClassNotFoundException {
         return null;
     }
 
+
     @Override
-    public void update(Bags bag) throws IOException {
+    public void update(Portfolio portfolio) throws IOException {
 
     }
 
     @Override
-    public void delete(Bags bags) throws IOException {
+    public void delete(Portfolio portfolio) throws IOException {
 
     }
 
