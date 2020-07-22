@@ -32,7 +32,7 @@
                   </Button>
                   <Line endX="56.0" layoutX="50.0" layoutY="90.0" startX="-51.0" stroke="#343e57" />
                   <Line endX="56.0" layoutX="50.0" layoutY="176.0" startX="-51.0" stroke="#343e57" />
-                  <Button id="settings" alignment="CENTER" layoutX="-4.0" layoutY="365.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="114.0" text="Настройки" textAlignment="CENTER">
+                  <Button id="settingsButton" fx:id="settingsButton" alignment="CENTER" layoutX="-4.0" layoutY="365.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="114.0" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="19.0" />
                      </font>

@@ -30,6 +30,15 @@
     -fx-background-repeat: no-repeat;
     -fx-background-position: center top;
 }
+
+#settingsButton {
+    -fx-background-image: url('../images/settings.png');
+
+    -fx-background-size: 45px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center top;
+    }
+
 #graphic {
     -fx-background-image: url('../images/graph.png');
     -fx-background-image: url('../images/graph.png');
