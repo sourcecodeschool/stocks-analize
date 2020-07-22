@@ -12,10 +12,13 @@ import javafx.scene.layout.Pane;
 import model.Portfolio;
 import repository.EntityManager;
 import repository.PortfolioRepositoryImpl;
+
 import java.io.IOException;
+
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -45,7 +48,8 @@ public class Controller implements Initializable {
         });
 
         settingsButton.setOnMouseClicked(event -> {
-            System.out.println("Нажата кнопка портфели");
+            rightAnchorPane.getChildren().clear();
+            rightAnchorPane.getChildren().add(SettingsForm.getRoot());
 
         });
 
@@ -54,7 +58,6 @@ public class Controller implements Initializable {
             System.out.println("Нажата кнопка портфели");
 
         });
-
 
 
         chartsButton.setOnMouseClicked(event -> {
@@ -66,7 +69,7 @@ public class Controller implements Initializable {
         Pane pane = new Pane();
 //        pane.setStyle("-fx-background-color:red;");
         pane.getStyleClass().add("bag");
-        pane.setPrefSize(100,100);
+        pane.setPrefSize(100, 100);
         pane.setLayoutX(600);
         mainForm.getChildren().add(pane);
 
