@@ -45,6 +45,8 @@ public class Controller implements Initializable {
         System.out.println("fsdfsd");
 
 
+
+
         portfolioButton.setOnMouseClicked(event -> {
             System.out.println("Нажата кнопка портфели");
 
