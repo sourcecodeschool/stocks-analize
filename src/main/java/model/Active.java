@@ -1,15 +1,14 @@
 package model;
 
 import java.time.Month;
+import java.time.Year;
 
 public class Active {
    private String fund; //фонд
    private Long id = System.currentTimeMillis(); // id нашего фонда
    private String name; // имя
    private Double rate = 0d; //ставка
-   private Enum duration {
-        Month
-    }
+     enum duration { Month, Year }
 
 
     public Active(String fund, long id, String name, double rate, int period) {
@@ -35,10 +34,6 @@ public class Active {
         return rate;
     }
 
-    public int getPeriod() {
-        return period;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -58,7 +53,6 @@ public class Active {
         result = 31 * result + name.hashCode();
         temp = Double.doubleToLongBits(rate);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + period;
         return result;
     }
 

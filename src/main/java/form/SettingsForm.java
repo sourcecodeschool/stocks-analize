@@ -23,7 +23,7 @@ public class SettingsForm {
         AnchorPane.setRightAnchor(root,0.);
         AnchorPane.setBottomAnchor(root,0.);
 
-        Button activeButton = new Button("Редактор активов");
+         Button activeButton = new Button("Редактор активов");
         activeButton.setOnMouseClicked(event -> {
             root.getChildren().clear();
             root.getChildren().add(getActiveEditForm());
