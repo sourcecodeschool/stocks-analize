@@ -43,10 +43,7 @@ public class Controller implements Initializable {
         });
 
         portfolioButton.setOnMouseClicked(event -> {
-            System.out.println("Нажата кнопка портфели");
-
-
-
+            System.out.println("Нажата ортфели");
             Portfolio portfolio = new Portfolio();
 //            try {
 //                try {
