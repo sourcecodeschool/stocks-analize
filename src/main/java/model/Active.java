@@ -1,18 +1,22 @@
 package model;
 
+import java.time.Month;
+
 public class Active {
    private String fund; //фонд
-   private long id = System.currentTimeMillis(); // id нашего фонда
+   private Long id = System.currentTimeMillis(); // id нашего фонда
    private String name; // имя
-   private double rate = 0; //ставка
-   private int period;
+   private Double rate = 0d; //ставка
+   private Enum duration {
+        Month
+    }
+
 
     public Active(String fund, long id, String name, double rate, int period) {
         this.fund = fund;
         this.id = id;
         this.name = name;
         this.rate = rate;
-        this.period = period;
     }
 
     public String getFund() {
@@ -42,10 +46,6 @@ public class Active {
 
         Active active = (Active) o;
 
-        if (id != active.id) return false;
-        if (Double.compare(active.rate, rate) != 0) return false;
-        if (period != active.period) return false;
-        if (!fund.equals(active.fund)) return false;
         return name.equals(active.name);
     }
 

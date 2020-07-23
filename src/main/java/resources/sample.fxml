@@ -3,6 +3,7 @@
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -28,7 +29,7 @@
                         </Button>
                      </children>
                   </Pane>
-                  <Button id="Button" fx:id="settingsButton" alignment="BASELINE_LEFT" layoutX="19.0" layoutY="332.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="20.0" textAlignment="CENTER">
+                  <Button id="Button" fx:id="settingsButton" alignment="BASELINE_LEFT" layoutX="19.0" layoutY="332.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="20.0" textAlignment="CENTER" textOverrun="CLIP">
                      <font>
                         <Font name="Calibri Bold" size="19.0" />
                      </font>
@@ -36,6 +37,9 @@
                         <String fx:value="btn" />
                         <String fx:value="settings" />
                      </styleClass>
+                     <effect>
+                        <ImageInput />
+                     </effect>
                   </Button>
                   <Pane layoutY="112.0" prefHeight="100.0" prefWidth="100.0">
                      <children>
