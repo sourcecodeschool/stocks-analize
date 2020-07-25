@@ -4,12 +4,12 @@ import java.time.Month;
 import java.time.Year;
 
 public class Active {
-   private String fund; //фонд
-   private Long id = System.currentTimeMillis(); // id нашего фонда
-   private String name; // имя
-   private Double rate = 0d; //ставка
-     enum duration { Month, Year }
+    private String fund; //фонд
+    private Long id = System.currentTimeMillis(); // id нашего фонда
+    private String name; // имя
+    private Double rate = 0d; //ставка
 
+    enum duration {Month, Year}
 
     public Active(String fund, long id, String name, double rate, int period) {
         this.fund = fund;
@@ -17,6 +17,7 @@ public class Active {
         this.name = name;
         this.rate = rate;
     }
+
 
     public String getFund() {
         return fund;
@@ -34,7 +35,7 @@ public class Active {
         return rate;
     }
 
-    @Override
+        @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -56,5 +57,13 @@ public class Active {
         return result;
     }
 
-
+    @Override
+    public String toString() {
+        return "Active{" +
+                "fund='" + fund + '\'' +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                ", rate=" + rate +
+                '}';
+    }
 }
