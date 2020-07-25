@@ -1,8 +1,5 @@
 package model;
 
-import java.time.Month;
-import java.time.Year;
-
 public class Active {
     private String fund; //фонд
     private Long id = System.currentTimeMillis(); // id нашего фонда
@@ -17,7 +14,6 @@ public class Active {
         this.name = name;
         this.rate = rate;
     }
-
 
     public String getFund() {
         return fund;
@@ -66,4 +62,5 @@ public class Active {
                 ", rate=" + rate +
                 '}';
     }
+
 }
