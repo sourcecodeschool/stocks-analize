@@ -38,11 +38,11 @@ public class Active {
         @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Active)) return false;
 
         Active active = (Active) o;
 
-        return name.equals(active.name);
+        return this.id.equals(active.id) ;
     }
 
     @Override

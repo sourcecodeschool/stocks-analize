@@ -107,10 +107,14 @@ public class SettingsForm {
         TextField fundTF = new TextField();
         Label nameLabel = new Label("Название");
         TextField nameTF = new TextField();
+        Label rateLabel = new Label("Ставка");
+        TextField rateTF = new TextField();
         vBox.getChildren().add(fundLabel);
         vBox.getChildren().add(fundTF);
         vBox.getChildren().add(nameLabel);
         vBox.getChildren().add(nameTF);
+        vBox.getChildren().add(rateLabel);
+        vBox.getChildren().add(rateTF);
         return vBox;
     }
 
@@ -124,10 +128,14 @@ public class SettingsForm {
         TextField fundTF = new TextField(active.getFund());
         Label nameLabel = new Label("Название");
         TextField nameTF = new TextField();
+        Label rateLabel = new Label("Ставка");
+        TextField rateTF = new TextField();
         vBox.getChildren().add(fundLabel);
         vBox.getChildren().add(fundTF);
         vBox.getChildren().add(nameLabel);
         vBox.getChildren().add(nameTF);
+        vBox.getChildren().add(rateLabel);
+        vBox.getChildren().add(rateTF);
         return vBox;
     }
 

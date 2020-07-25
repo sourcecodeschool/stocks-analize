@@ -6,9 +6,9 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="mainForm" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+<AnchorPane fx:id="mainForm" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
    <children>
-      <SplitPane id="splitPane" fx:id="splitPane" dividerPositions="0.3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@css/style.css">
+      <SplitPane id="splitPane" fx:id="splitPane" dividerPositions="0.17224080267558528" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@css/style.css">
         <items>
           <AnchorPane id="leftAnchorPane" maxWidth="100.0" minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="82.0" styleClass="anchorPane">
                <children>
@@ -32,7 +32,7 @@
                   </Button>
                   <Line endX="56.0" layoutX="50.0" layoutY="90.0" startX="-51.0" stroke="#343e57" />
                   <Line endX="56.0" layoutX="50.0" layoutY="176.0" startX="-51.0" stroke="#343e57" />
-                  <Button id="settingsButton" fx:id="settingsButton" alignment="CENTER" layoutX="-4.0" layoutY="365.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="114.0" textAlignment="CENTER">
+                  <Button id="settingsButton" fx:id="settingsButton" alignment="CENTER" layoutX="25.0" layoutY="338.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="50.0" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="19.0" />
                      </font>
