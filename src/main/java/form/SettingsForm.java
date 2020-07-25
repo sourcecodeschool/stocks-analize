@@ -104,10 +104,13 @@ public class SettingsForm {
         AnchorPane.setRightAnchor(vBox,null);
         AnchorPane.setBottomAnchor(vBox,15.);
         Label fundLabel = new Label("Фонд");
+        fundLabel.setStyle("-fx-text-fill: white; -fx-font-size: 16px;");
         TextField fundTF = new TextField();
         Label nameLabel = new Label("Название");
+        nameLabel.setStyle("-fx-text-fill: white; -fx-font-size: 16px;");
         TextField nameTF = new TextField();
         Label rateLabel = new Label("Ставка");
+        rateLabel.setStyle("-fx-text-fill: white; -fx-font-size: 16px;");
         TextField rateTF = new TextField();
         vBox.getChildren().add(fundLabel);
         vBox.getChildren().add(fundTF);
