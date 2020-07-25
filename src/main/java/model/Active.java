@@ -9,7 +9,7 @@ public class Active {
     private String name; // имя
     private Double rate = 0d; //ставка
 
-    enum duration {Month, Year}
+    enum duration {MONTH, YEAR}
 
     public Active(String fund, long id, String name, double rate, int period) {
         this.fund = fund;

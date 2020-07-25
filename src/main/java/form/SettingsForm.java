@@ -115,6 +115,7 @@ public class SettingsForm {
         Label rateLabel = new Label("Ставка");
         rateLabel.setStyle("-fx-text-fill: white; -fx-font-size: 16px;");
         TextField rateTF = new TextField();
+
         vBox.getChildren().add(fundLabel);
         vBox.getChildren().add(fundTF);
         vBox.getChildren().add(nameLabel);
@@ -122,6 +123,8 @@ public class SettingsForm {
         vBox.getChildren().add(rateLabel);
         vBox.getChildren().add(rateTF);
         return vBox;
+
+
     }
 
     private static Node getEditActiveForm(Active active) {
@@ -144,7 +147,5 @@ public class SettingsForm {
         vBox.getChildren().add(rateTF);
         return vBox;
     }
-
-
 
 }

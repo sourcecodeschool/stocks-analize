@@ -6,6 +6,8 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Side;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -52,7 +54,6 @@ public class Controller implements Initializable {
             rightAnchorPane.getChildren().add(SettingsForm.getRoot());
 
         });
-
 
         portfolioButton.setOnMouseClicked(event -> {
             System.out.println("Нажата кнопка портфели");
