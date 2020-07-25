@@ -1,7 +1,10 @@
 package form;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -72,9 +75,9 @@ public class SettingsForm {
             hBox.setStyle("-fx-border-color: black;-fx-border-width: 1px;");
             strings.add(hBox.getId());
         });
-        hBox.getChildren().add(new Label("Name"));
-        hBox.getChildren().add(new Label("Fund"));
-        hBox.getChildren().add(new Label("10"));
+        hBox.getChildren().add(new Label("Редактор "));
+        hBox.getChildren().add(new Label("новых "));
+        hBox.getChildren().add(new Label("активов"));
         vBox.getChildren().add(hBox);
 
         HBox buttonBox = new HBox();
@@ -84,7 +87,7 @@ public class SettingsForm {
             vBox.getChildren().add(getCreateActiveForm());
         });
 
-        Button showButton = new Button("Показать выделенные");
+        Button showButton = new Button("Редактировать текущщий актив");
         showButton.setOnMouseClicked(event -> {
             strings.forEach(s -> {
                 System.out.println(s);
@@ -141,5 +144,7 @@ public class SettingsForm {
         vBox.getChildren().add(rateTF);
         return vBox;
     }
+
+
 
 }

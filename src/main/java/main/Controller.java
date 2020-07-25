@@ -112,6 +112,7 @@ public class Controller implements Initializable {
         areaChart.getData().addAll(series2014, series2015);
 
         return areaChart;
+
     }
 
 }
