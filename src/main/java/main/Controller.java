@@ -4,14 +4,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Side;
 import javafx.scene.Node;
+import javafx.scene.chart.AreaChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.chart.AreaChart;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
+import model.Portfolio;
+import repository.EntityManager;
+import repository.PortfolioRepositoryImpl;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -24,9 +29,7 @@ public class Controller implements Initializable {
     @FXML
     private Button portfolioButton;
     @FXML
-    private AnchorPane rightAnchorPane;
-    @FXML
-    private Button chartsButton;
+    private Button AddPortfolio;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -35,46 +38,24 @@ public class Controller implements Initializable {
         divider.positionProperty().addListener((observableValue, number, t1) -> {
                 divider.setPosition(0.3);
         });
+        EntityManager entityManager = EntityManager.getInstance();
 
         portfolioButton.setOnMouseClicked(event -> {
-
-
-
-
-
-
-//            System.out.println("Нажата кнопка портфели");
-//            Bags bags = new Bags();
-//            try {
-//                try {
-//                    bags = bags.getBag();
-//                    System.out.println(bags.getPortfolioName());
-//                    System.out.println(bags.getPortfolioId());
-//                } catch (ClassNotFoundException e) {
-//                    e.printStackTrace();
-//                }
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//         });
-        AddPortfolio.setOnMouseClicked(event -> {
-//            System.out.println("Нажата кнопка добавить портфель");
-//            Bags bag = new Bags(3L,"Brillianti", System.currentTimeMillis());
-//            try {
-//                bag.CreateBag(bag);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-            System.out.println("Кнопка нажата");
-            rightAnchorPane.getChildren().clear();
-            rightAnchorPane.getChildren().add(new Label(" EntityManager.bags.add(bag);\n" +
-                    "        //serialize this EntityManager.bags"));
+            System.out.println("Нажата кнопка портфели");
         });
+        AddPortfolio.setOnMouseClicked(event -> {
+            System.out.println("Нажата кнопка добавить портфель");
 
-        chartsButton.setOnMouseClicked(event -> {
-            rightAnchorPane.getChildren().clear();
-            rightAnchorPane.getChildren().add(getChartNode());
-//        });
+            Portfolio portfolio1 = new Portfolio(1L,"Brilliant", System.currentTimeMillis());
+            Portfolio portfolio2 = new Portfolio(2L,"Bitcoin", System.currentTimeMillis()+1);
+            entityManager.createPortfolio(portfolio1);
+            entityManager.createPortfolio(portfolio2);
+            System.out.println(entityManager.get(1L).getPortfolioName().toString());
+            System.out.println(entityManager.get(2L).getPortfolioName().toString());
+            entityManager.delete(portfolio1);
+            entityManager.getPortfolioList();
+     });
+
         //this.showPortfolioForm();
 
         Pane pane = new Pane();
@@ -84,6 +65,7 @@ public class Controller implements Initializable {
         pane.setLayoutX(600);
         mainForm.getChildren().add(pane);
 
+        //EntityManager.getInstance().updateBag();
     }
 
     public Controller() {

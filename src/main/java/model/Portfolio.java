@@ -1,10 +1,12 @@
 package model;
 
+import repository.EntityManager;
+
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Portfolio implements java.io.Serializable {
+public class Portfolio  implements java.io.Serializable {
 
     private Long portfolioId;
     private String portfolioName;
@@ -16,9 +18,10 @@ public class Portfolio implements java.io.Serializable {
         investment = new HashMap<>();
     }
 
-    public Portfolio(Long portfolioId, String portfolioName) {
+    public Portfolio(Long portfolioId, String portfolioName, Long date) {
         this.portfolioId = portfolioId;
         this.portfolioName = portfolioName;
+        this.date = date;
     }
 
     public Long getPortfolioId() {
