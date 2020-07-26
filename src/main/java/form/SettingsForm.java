@@ -85,7 +85,7 @@ public class SettingsForm {
             vBox.getChildren().add(getCreateActiveForm());
         });
 
-        Button showButton = new Button("Редактировать текущщий актив");
+        Button showButton = new Button("Редактировать текущих активов");
         showButton.setOnMouseClicked(event -> {
             strings.forEach(s -> {
                 System.out.println(s);
