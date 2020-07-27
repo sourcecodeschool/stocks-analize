@@ -38,7 +38,7 @@ public class Active {
 
         Active active = (Active) o;
 
-        return this.id.equals(active.id) ;
+        return this.id.equals(active.id);
     }
 
     @Override
