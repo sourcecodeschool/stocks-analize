@@ -106,9 +106,7 @@ public class Controller implements Initializable {
         series2015.getData().add(new XYChart.Data<>(8, 1080));
         series2015.getData().add(new XYChart.Data<>(10, 2050));
         series2015.getData().add(new XYChart.Data<>(12, 2005));
-
         areaChart.getData().addAll(series2014, series2015);
-
         return areaChart;
     }
 
