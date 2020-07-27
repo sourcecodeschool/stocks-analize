@@ -67,14 +67,11 @@ public class Controller implements Initializable {
             rightAnchorPane.getChildren().add(getChartNode());
         });
 
-
         Pane pane = new Pane();
-//      pane.setStyle("-fx-background-color:red;");
         pane.getStyleClass().add("bag");
         pane.setPrefSize(100, 100);
         pane.setLayoutX(600);
         mainForm.getChildren().add(pane);
-
     }
 
 
