@@ -1,5 +1,6 @@
 package form;
 
+
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -23,7 +24,7 @@ public class SettingsForm {
         AnchorPane.setRightAnchor(root,0.);
         AnchorPane.setBottomAnchor(root,0.);
 
-        Button activeButton = new Button("Редактор активов");
+         Button activeButton = new Button("Редактор активов");
         activeButton.setOnMouseClicked(event -> {
             root.getChildren().clear();
             root.getChildren().add(getActiveEditForm());
@@ -72,9 +73,9 @@ public class SettingsForm {
             hBox.setStyle("-fx-border-color: black;-fx-border-width: 1px;");
             strings.add(hBox.getId());
         });
-        hBox.getChildren().add(new Label("Name"));
-        hBox.getChildren().add(new Label("Fund"));
-        hBox.getChildren().add(new Label("10"));
+        hBox.getChildren().add(new Label("Редактор "));
+        hBox.getChildren().add(new Label("новых "));
+        hBox.getChildren().add(new Label("активов"));
         vBox.getChildren().add(hBox);
 
         HBox buttonBox = new HBox();
@@ -84,7 +85,7 @@ public class SettingsForm {
             vBox.getChildren().add(getCreateActiveForm());
         });
 
-        Button showButton = new Button("Показать выделенные");
+        Button showButton = new Button("Редактировать текущих активов");
         showButton.setOnMouseClicked(event -> {
             strings.forEach(s -> {
                 System.out.println(s);
@@ -104,14 +105,24 @@ public class SettingsForm {
         AnchorPane.setRightAnchor(vBox,null);
         AnchorPane.setBottomAnchor(vBox,15.);
         Label fundLabel = new Label("Фонд");
+        fundLabel.setStyle("-fx-text-fill: white; -fx-font-size: 16px;");
         TextField fundTF = new TextField();
         Label nameLabel = new Label("Название");
+        nameLabel.setStyle("-fx-text-fill: white; -fx-font-size: 16px;");
         TextField nameTF = new TextField();
+        Label rateLabel = new Label("Ставка");
+        rateLabel.setStyle("-fx-text-fill: white; -fx-font-size: 16px;");
+        TextField rateTF = new TextField();
+
         vBox.getChildren().add(fundLabel);
         vBox.getChildren().add(fundTF);
         vBox.getChildren().add(nameLabel);
         vBox.getChildren().add(nameTF);
+        vBox.getChildren().add(rateLabel);
+        vBox.getChildren().add(rateTF);
         return vBox;
+
+
     }
 
     private static Node getEditActiveForm(Active active) {
@@ -124,10 +135,14 @@ public class SettingsForm {
         TextField fundTF = new TextField(active.getFund());
         Label nameLabel = new Label("Название");
         TextField nameTF = new TextField();
+        Label rateLabel = new Label("Ставка");
+        TextField rateTF = new TextField();
         vBox.getChildren().add(fundLabel);
         vBox.getChildren().add(fundTF);
         vBox.getChildren().add(nameLabel);
         vBox.getChildren().add(nameTF);
+        vBox.getChildren().add(rateLabel);
+        vBox.getChildren().add(rateTF);
         return vBox;
     }
 

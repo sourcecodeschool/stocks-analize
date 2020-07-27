@@ -3,12 +3,13 @@
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane fx:id="mainForm" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
    <children>
-      <SplitPane id="splitPane" fx:id="splitPane" dividerPositions="0.3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@css/style.css">
+      <SplitPane id="splitPane" fx:id="splitPane" dividerPositions="0.17224080267558528" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@css/style.css">
         <items>
           <AnchorPane id="leftAnchorPane" maxWidth="100.0" minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="82.0" styleClass="anchorPane">
                <children>
@@ -28,7 +29,7 @@
                         </Button>
                      </children>
                   </Pane>
-                  <Button id="settings" alignment="CENTER" layoutX="-7.0" layoutY="365.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="114.0" text="Настройки" textAlignment="CENTER">
+                  <Button id="Button" fx:id="settingsButton" alignment="BASELINE_LEFT" layoutX="19.0" layoutY="332.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="20.0" textAlignment="CENTER" textOverrun="CLIP">
                      <font>
                         <Font name="Calibri Bold" size="19.0" />
                      </font>
@@ -36,6 +37,9 @@
                         <String fx:value="btn" />
                         <String fx:value="settings" />
                      </styleClass>
+                     <effect>
+                        <ImageInput />
+                     </effect>
                   </Button>
                   <Pane layoutY="112.0" prefHeight="100.0" prefWidth="100.0">
                      <children>
