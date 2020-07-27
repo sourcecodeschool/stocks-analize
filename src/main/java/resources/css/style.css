@@ -59,6 +59,20 @@
     -fx-cursor: hand;
 }
 
+#settingsButton {
+
+    -fx-background-image: url('../images/settings.png');
+     -fx-background-size: 35px;
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: center top;
+}
+
+#settingsButton:Hover{
+-fx-background-image: url('../images/settingsHover.png');
+-fx-background-size: 35px;
+
+}
+
 .split-pane .split-pane-divider {
     -fx-background-color: transparent;
     -fx-cursor: default;
