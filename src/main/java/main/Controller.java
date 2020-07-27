@@ -66,7 +66,6 @@ public class Controller implements Initializable {
             rightAnchorPane.getChildren().clear();
             rightAnchorPane.getChildren().add(getChartNode());
         });
-        //this.showPortfolioForm();
 
 
         Pane pane = new Pane();
