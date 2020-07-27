@@ -49,6 +49,7 @@ public class Controller implements Initializable {
             divider.setPosition(0.3);
         });
 
+
         settingsButton.setOnMouseClicked(event -> {
             rightAnchorPane.getChildren().clear();
             rightAnchorPane.getChildren().add(SettingsForm.getRoot());
