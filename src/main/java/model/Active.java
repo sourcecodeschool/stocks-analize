@@ -65,7 +65,7 @@ public class Active implements Serializable {
         Integer result;
         Long temp;
         result = fund != null ? fund.hashCode() : 0;
-        result = 31 * result + (id ^ (id >>> 32));
+        result = 31 * result + (int) (id ^ (id >>> 32));
         result = 31 * result + (name != null ? name.hashCode() : 0);
         temp = Double.doubleToLongBits(rate);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
