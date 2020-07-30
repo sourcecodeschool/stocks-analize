@@ -32,11 +32,15 @@
 }
 
 #settingsButton {
+    -fx-background-color: none;
     -fx-background-image: url('../images/settings.png');
-
     -fx-background-size: 45px;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center top;
+    }
+    #settingsButton:hover {
+        -fx-background-image: url('../images/settingsHover.png');
+        -fx-cursor: hand;
     }
 
 #graphic {

@@ -3,19 +3,20 @@ package model;
 import java.io.Serializable;
 import java.util.HashMap;
 
-public class Active implements Serializable {
+public abstract class Active implements Serializable {
 
     private String fund; //фонд
-    private Integer id; // id нашего фонда
-    private String name; // имя
+    private Long id; // id нашего фонда
+    private String sum; // сумма
     private Double rate = 0d; //ставка
     private Integer period;
+
     private HashMap<Long, Double> actives = new HashMap<>();
 
-    public Active(String fund, Integer id, String name, Double rate, Integer period) {
+    public Active(String fund, Long id, String name, Double rate, Integer period) {
         this.fund = fund;
         this.id = id;
-        this.name = name;
+        this.sum = name;
         this.rate = rate;
         this.period = period;
         this.actives = actives;
@@ -29,12 +30,12 @@ public class Active implements Serializable {
         return fund;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getSum() {
+        return sum;
     }
 
     public Double getRate() {
@@ -66,7 +67,7 @@ public class Active implements Serializable {
         Long temp;
         result = fund != null ? fund.hashCode() : 0;
         result = 31 * result + (int) (id ^ (id >>> 32));
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (sum != null ? sum.hashCode() : 0);
         temp = Double.doubleToLongBits(rate);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + period;
@@ -77,12 +78,12 @@ public class Active implements Serializable {
         this.fund = fund;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSum(String sum) {
+        this.sum = sum;
     }
 
     public void setRate(Double rate) {
@@ -102,11 +103,12 @@ public class Active implements Serializable {
         return "Active{" +
                 "fund='" + fund + '\'' +
                 ", id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + sum + '\'' +
                 ", rate=" + rate +
                 ", period=" + period +
                 ", actives=" + actives +
                 '}';
     }
+
 }
 

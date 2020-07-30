@@ -1,9 +1,12 @@
 package form;
 
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -16,16 +19,18 @@ import java.util.List;
 
 public class SettingsForm {
 
+
     public static Node getRoot() {
         AnchorPane root = new AnchorPane();
         VBox vBox = new VBox();
-        AnchorPane.setLeftAnchor(root,0.);
-        AnchorPane.setTopAnchor(root,0.);
-        AnchorPane.setRightAnchor(root,0.);
-        AnchorPane.setBottomAnchor(root,0.);
+        AnchorPane.setLeftAnchor(root,null);
+        AnchorPane.setTopAnchor(root,200.);
+        AnchorPane.setRightAnchor(root,200.);
+        AnchorPane.setBottomAnchor(root,null);
 
          Button activeButton = new Button("Редактор активов");
-        activeButton.setOnMouseClicked(event -> {
+         activeButton.setMouseTransparent(true);
+         activeButton.setOnMouseClicked(event -> {
             root.getChildren().clear();
             root.getChildren().add(getActiveEditForm());
         });
@@ -37,11 +42,10 @@ public class SettingsForm {
     }
 
     public static Node getRoot(List<Portfolio> portfolios) {
-        Portfolio portfolio = new Portfolio();
-
+        Portfolio portfolio = new Portfolio(2l,"Igor",1111l);
         AnchorPane root = new AnchorPane();
         VBox vBox = new VBox();
-        AnchorPane.setLeftAnchor(root,0.);
+        AnchorPane.setLeftAnchor(root,100.);
         AnchorPane.setTopAnchor(root,0.);
         AnchorPane.setRightAnchor(root,0.);
         AnchorPane.setBottomAnchor(root,0.);
@@ -61,6 +65,7 @@ public class SettingsForm {
     private static Node getActiveEditForm() {
         List<String> strings = new ArrayList<>();
         VBox vBox = new VBox();
+
         HBox hBox = new HBox();
         hBox.setId("Active getID");
         hBox.setOnMouseEntered(mouseEvent -> {
@@ -79,6 +84,8 @@ public class SettingsForm {
         vBox.getChildren().add(hBox);
 
         HBox buttonBox = new HBox();
+        buttonBox.setMinWidth(20.);
+
         Button createButton = new Button("Создать");
         createButton.setOnMouseClicked(event -> {
             vBox.getChildren().clear();
@@ -114,12 +121,18 @@ public class SettingsForm {
         rateLabel.setStyle("-fx-text-fill: white; -fx-font-size: 16px;");
         TextField rateTF = new TextField();
 
+        Button addNewActive = new Button ("Создать актив");
+        addNewActive.setOnMouseClicked(event -> {
+            vBox.getChildren().add(getActiveEditForm());
+        });
+
         vBox.getChildren().add(fundLabel);
         vBox.getChildren().add(fundTF);
         vBox.getChildren().add(nameLabel);
         vBox.getChildren().add(nameTF);
         vBox.getChildren().add(rateLabel);
         vBox.getChildren().add(rateTF);
+        vBox.getChildren().add(addNewActive);
         return vBox;
 
 
@@ -134,8 +147,8 @@ public class SettingsForm {
         Label fundLabel = new Label("Фонд");
         TextField fundTF = new TextField(active.getFund());
         Label nameLabel = new Label("Название");
-        TextField nameTF = new TextField();
-        Label rateLabel = new Label("Ставка");
+        TextField nameTF = new TextField(active.getSum());
+        Label rateLabel = new Label("Сумма");
         TextField rateTF = new TextField();
         vBox.getChildren().add(fundLabel);
         vBox.getChildren().add(fundTF);

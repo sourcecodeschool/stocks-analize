@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.Active;
+import org.w3c.dom.ls.LSOutput;
 
 public class Main extends Application {
 
@@ -18,9 +20,11 @@ public class Main extends Application {
         scene.getStylesheets().add(getClass().getResource("../resources/css/style.css").toString());
         primaryStage.setScene(scene);
         primaryStage.show();
+
+
     }
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         launch(args);
     }
 }
